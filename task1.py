@@ -1,4 +1,3 @@
-
 def caching_fibonacci():
     """
     Функція caching_fibonacci створює та повертає вкладену функцію fibonacci(n),
@@ -13,11 +12,9 @@ def caching_fibonacci():
     Повертає:
         - Функцію fibonacci(n), яку можна використовувати для обчислення чисел Фібоначчі.
     """
-    cache = {}  
-
+    cache = {}
 
     def fibonacci(n):
-
         """
         Обчислює n-те число Фібоначчі з використанням кешування.
 
@@ -28,17 +25,16 @@ def caching_fibonacci():
         int: Значення n-го числа Фібоначчі.
         """
         if n <= 0:
-            return 0 
+            return 0
         if n == 1:
-            return 1 
+            return 1
         if n in cache:
-            return cache[n]  
+            return cache[n]
 
         cache[n] = fibonacci(n - 1) + fibonacci(n - 2)
         return cache[n]
 
-    return fibonacci 
+    return fibonacci
 
 
-print(caching_fibonacci()(17))  
-
+print(caching_fibonacci()(17))
